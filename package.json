@@ -1,0 +1,26 @@
+{
+  "name": "airmail",
+  "description": "send files from a web browser to another machine",
+  "author": "Stephen Whitmore <sww@eight.net>",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/airmail.git"
+  },
+  "homepage": "https://github.com/noffle/airmail",
+  "bugs": "https://github.com/noffle/airmail/issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "standard"
+  },
+  "keywords": [
+  ],
+  "pre-commit": ["lint", "test"],
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~4.6.2",
+    "standard": "~8.3.0",
+    "pre-commit": "~1.1.3"
+  },
+  "license": "ISC"
+}
