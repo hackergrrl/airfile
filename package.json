@@ -8,9 +8,8 @@
   },
   "homepage": "https://github.com/noffle/airmail",
   "bugs": "https://github.com/noffle/airmail/issues",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "tape test/*.js",
     "lint": "standard"
   },
   "keywords": [
