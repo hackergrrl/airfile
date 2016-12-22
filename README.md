@@ -19,6 +19,14 @@ interface that lets you select files from your phone and send them.
 
 These files are sent one by one to your local machine, saving them locally.
 
+## Install
+
+With [npm](https://npmjs.org/) installed, run
+
+```
+$ npm install --global airfile
+```
+
 ## License
 
 ISC
