@@ -2,7 +2,7 @@
   "name": "airmail",
   "description": "send files from a web browser to another machine",
   "author": "Stephen Whitmore <sww@eight.net>",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "url": "git://github.com/noffle/airmail.git"
   },
