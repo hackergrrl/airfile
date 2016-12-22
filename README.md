@@ -3,7 +3,8 @@
 > Painlessly transfer files from a web browser to your local machine.
 
 Airfile was designed specifically to make it easier to get data off my android
-phone to my laptop without needing a native application.
+phone to my laptop without needing a native application, cloud services, or a
+USB cable.
 
 ## Usage
 
