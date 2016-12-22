@@ -18,7 +18,10 @@
     "test"
   ],
   "dependencies": {
-    "querystring": "^0.2.0"
+    "after-all": "^2.0.2",
+    "base64-stream": "^0.1.3",
+    "querystring": "^0.2.0",
+    "xhr": "^2.3.2"
   },
   "devDependencies": {
     "tape": "~4.6.2",
