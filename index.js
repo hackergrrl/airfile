@@ -1,38 +1,32 @@
 var button = document.getElementById('button')
-var after = require('after-all')
+var waterfall = require('run-waterfall')
 var xhr = require('xhr')
-
-var data = {}
 
 button.onclick = function (e) {
   var files = document.getElementById('files').files
 
-  var afterRead = after(doSend)
+  var tasks = []
 
   for (var i = 0; i < files.length; i++) {
     (function (file) {
-      var done = afterRead()
-      readAsBase64(file, function (_, blob) {
-        data[file.name] = blob.substring(blob.indexOf(',') + 1)
-        done()
+      tasks.push(function (callback) {
+        console.log('task!')
+        readAsBase64(file, function (_, blob) {
+          blob = blob.substring(blob.indexOf(',') + 1)
+          xhr({
+            body: blob,
+            method: 'POST',
+            uri: '/send?filename=' + file.name
+          }, function (err, resp, body) {
+            console.log('xhr done', err, resp, body)
+            callback(err)
+          })
+        })
       })
     })(files[i])
   }
 
-  function doSend (_) {
-    var afterSend = after(onDone)
-
-    Object.keys(data).forEach(function (filename) {
-      var done = afterSend()
-      xhr({
-        body: data[filename],
-        method: 'POST',
-        uri: '/send?filename=' + filename
-      }, function (err, resp, body) {
-        done(err, body)
-      })
-    })
-  }
+  waterfall(tasks, onDone)
 
   function onDone (_) {
     console.log('all done')
