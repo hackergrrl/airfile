@@ -9,6 +9,9 @@
   "homepage": "https://github.com/noffle/airmail",
   "bugs": "https://github.com/noffle/airmail/issues",
   "main": "server.js",
+  "bin": {
+    "airmail": "bin/cli.js"
+  },
   "scripts": {
     "lint": "standard",
     "start": "browserify index.js > bundle.js && node server.js"
