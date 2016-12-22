@@ -4,13 +4,13 @@
   "author": "Stephen Whitmore <sww@eight.net>",
   "version": "0.0.2",
   "repository": {
-    "url": "git://github.com/noffle/airmail.git"
+    "url": "git://github.com/noffle/airfile.git"
   },
-  "homepage": "https://github.com/noffle/airmail",
-  "bugs": "https://github.com/noffle/airmail/issues",
+  "homepage": "https://github.com/noffle/airfile",
+  "bugs": "https://github.com/noffle/airfile/issues",
   "main": "server.js",
   "bin": {
-    "airmail": "bin/cli.js"
+    "airfile": "bin/cli.js"
   },
   "scripts": {
     "lint": "standard",
