@@ -3,8 +3,11 @@ var http = require('http')
 var url = require('url')
 var querystring = require('querystring')
 var base64 = require('base64-stream')
+var ip = require('internal-ip')
 
-http.createServer(onRequest).listen(8400)
+http.createServer(onRequest).listen(8400, function () {
+  console.log('Listening on', ip.v4() + ':8400')
+})
 
 function onRequest (req, res) {
   // TODO(sww): use ecstatic
