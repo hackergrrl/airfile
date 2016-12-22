@@ -14,7 +14,8 @@
   },
   "scripts": {
     "lint": "standard",
-    "start": "browserify index.js > bundle.js && node server.js"
+    "start": "browserify index.js > bundle.js && node server.js",
+    "postinstall": "browserify index.js > bundle.js"
   },
   "keywords": [],
   "pre-commit": [
