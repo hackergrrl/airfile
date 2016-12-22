@@ -9,6 +9,8 @@ function onRequest (req, res) {
   // TODO(sww): use ecstatic
   if (req.url === '/index.html' || req.url === '/') {
     fs.createReadStream('./index.html').pipe(res)
+  } else if (req.url === '/index.js') {
+    fs.createReadStream('./index.js').pipe(res)
   } else if (req.method === 'POST' && /^\/send/.test(req.url)) {
     var qs = url.parse(req.url).query
     var kvs = querystring.parse(qs)
