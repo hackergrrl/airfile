@@ -6,6 +6,7 @@ var url = require('url')
 var querystring = require('querystring')
 var base64 = require('base64-stream')
 var ip = require('internal-ip')
+var path = require('path')
 
 http.createServer(onRequest).listen(8400, function () {
   console.log('Listening on', ip.v4() + ':8400')
@@ -14,9 +15,9 @@ http.createServer(onRequest).listen(8400, function () {
 function onRequest (req, res) {
   // TODO(sww): use ecstatic
   if (req.url === '/index.html' || req.url === '/') {
-    fs.createReadStream('./index.html').pipe(res)
+    fs.createReadStream(path.join(__dirname, '..', 'index.html')).pipe(res)
   } else if (req.url === '/bundle.js') {
-    fs.createReadStream('./bundle.js').pipe(res)
+    fs.createReadStream(path.join(__dirname, '..', 'bundle.js')).pipe(res)
   } else if (req.method === 'POST' && /^\/send/.test(req.url)) {
     var qs = url.parse(req.url).query
     var kvs = querystring.parse(qs)
