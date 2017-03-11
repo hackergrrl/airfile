@@ -29,9 +29,10 @@ function onRequest (req, res) {
         .pipe(base64.decode())
         .pipe(fs.createWriteStream(kvs.filename))
         .on('finish', function () {
+          console.log('..wrote', kvs.filename + '!')
           res.end()
         })
-      console.log('wrote', kvs.filename, 'to local disk')
+      console.log('writing', kvs.filename, 'to local disk..')
     }
   } else {
     res.statusCode = 404
