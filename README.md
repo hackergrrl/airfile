@@ -18,7 +18,12 @@ Listening on 192.168.0.123:8400
 Point your phone's web browser to this address. You'll be greeted with an
 interface that lets you select files from your phone and send them.
 
-These files are sent one by one to your local machine, saving them locally.
+These files are sent one by one to your local machine, saving them locally in
+the directory you ran `airfile` in.
+
+**Caveat**: I've found Chrome to work best with allowing multi-select of photos.
+Make sure you select `Documents` as the place to choose photos from. Firefox
+didn't seem to let me do multi-select.
 
 ## Install
 
