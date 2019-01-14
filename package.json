@@ -8,13 +8,12 @@
   },
   "homepage": "https://github.com/noffle/airfile",
   "bugs": "https://github.com/noffle/airfile/issues",
-  "main": "server.js",
   "bin": {
     "airfile": "bin/cli.js"
   },
   "scripts": {
     "lint": "standard",
-    "start": "browserify index.js > bundle.js && node server.js",
+    "start": "browserify index.js > bundle.js && node bin/cli.js",
     "postinstall": "browserify index.js > bundle.js"
   },
   "keywords": [],
