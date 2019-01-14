@@ -15,6 +15,7 @@ http.createServer(onRequest).listen(8400, function () {
 function onRequest (req, res) {
   // TODO(sww): use ecstatic
   if (req.url === '/index.html' || req.url === '/') {
+    res.setHeader('Content-Type', 'text/html')
     fs.createReadStream(path.join(__dirname, '..', 'index.html')).pipe(res)
   } else if (req.url === '/bundle.js') {
     fs.createReadStream(path.join(__dirname, '..', 'bundle.js')).pipe(res)
