@@ -8,22 +8,23 @@ button.onclick = function (e) {
   var tasks = []
 
   for (var i = 0; i < files.length; i++) {
-    (function (file) {
+    (function (file, n) {
       tasks.push(function (callback) {
         console.log('task!')
         readAsBase64(file, function (_, blob) {
           blob = blob.substring(blob.indexOf(',') + 1)
+          var uri = '/send?filename=' + file.name + '&idx=' + n + '&count=' + files.length
           xhr({
             body: blob,
             method: 'POST',
-            uri: '/send?filename=' + file.name
+            uri: uri
           }, function (err, resp, body) {
             console.log('xhr done', err, resp, body)
             callback(err)
           })
         })
       })
-    })(files[i])
+    })(files[i], i)
   }
 
   waterfall(tasks, onDone)

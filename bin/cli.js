@@ -26,14 +26,17 @@ function onRequest (req, res) {
       res.statusCode = 400
       res.end('missing filename query param')
     } else {
+      var idx = Number(kvs.idx)
+      var count = Number(kvs.count)
       req
         .pipe(base64.decode())
         .pipe(fs.createWriteStream(kvs.filename))
         .on('finish', function () {
-          console.log('..wrote', kvs.filename + '!')
+          console.log(' ..done')
+          if (idx == count-1) console.log('all done')
           res.end()
         })
-      console.log('writing', kvs.filename, 'to local disk..')
+      process.stdout.write('['+(idx+1)+'/'+count+'] ' + kvs.filename + '..')
     }
   } else {
     res.statusCode = 404
