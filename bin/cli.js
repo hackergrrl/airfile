@@ -9,7 +9,9 @@ var ip = require('internal-ip')
 var path = require('path')
 
 http.createServer(onRequest).listen(8400, function () {
-  console.log('Listening on', ip.v4() + ':8400')
+  console.log('Ready!')
+  console.log()
+  console.log('On your phone, open the URL http://'+ip.v4()+':8400')
 })
 
 function onRequest (req, res) {
