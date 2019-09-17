@@ -38,7 +38,7 @@ function onRequest (req, res) {
           if (idx == count-1) console.log('all done')
           res.end()
         })
-      process.stdout.write('['+(idx+1)+'/'+count+'] ' + kvs.filename + '..')
+      process.stdout.write('['+(idx+1)+'/'+count+'] ' + kvs.filename)
     }
   } else {
     res.statusCode = 404
