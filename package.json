@@ -2,7 +2,7 @@
   "name": "airfile",
   "description": "send files from a web browser to another machine",
   "author": "Stephen Whitmore <sww@eight.net>",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "url": "git://github.com/noffle/airfile.git"
   },
